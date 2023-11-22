@@ -1,12 +1,15 @@
+import { PROPS_DATA} from "../data.js"
+import CoreConcept from "./CoreConcept"
 
-import "./CoreConcepts.css"
-
-export default function CoreConcepts({image, title, description}){ // object destructuring 
-    return (
-      <li>
-        <img src={image} alt={title}/>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </li>
+export default function CoreConcepts(){
+    return(
+        <section id="core-concepts">
+            <h2>Core Concepts</h2>
+            <ul>
+            {PROPS_DATA.map((item) => (
+                <CoreConcept key={item.title} {...item}></CoreConcept>
+            ))}
+            </ul>
+      </section>
     )
-  }
+}
