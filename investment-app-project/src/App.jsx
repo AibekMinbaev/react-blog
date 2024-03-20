@@ -15,7 +15,7 @@ function App() {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [type]: newValue
+        [type]: +newValue // this will convert the data to number type 
       }
     })
   }
